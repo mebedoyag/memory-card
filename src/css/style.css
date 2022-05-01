@@ -1,0 +1,60 @@
+@font-face {
+  font-family: caveat;
+  src: url("./fonts/Caveat-Regular.ttf");
+}
+html {
+  font-family: caveat;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  font-size: 3rem;
+}
+h1, h2, p {
+  margin: 0;
+}
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+footer {
+  border: 2px solid red;
+  font-size: 2rem;
+}
+.top {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+.cat img {
+  border: 2px solid blue;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+}
+.memory-game {
+  border: 2px solid green;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.footer {
+  text-align: center;
+}

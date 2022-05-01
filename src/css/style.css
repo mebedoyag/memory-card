@@ -25,7 +25,6 @@ h2 {
   font-size: 3rem;
 }
 footer {
-  border: 2px solid red;
   font-size: 2rem;
 }
 .top {
@@ -49,7 +48,6 @@ footer {
   object-fit: cover;
 }
 .memory-game {
-  border: 2px solid green;
   height: 100vh;
   display: flex;
   flex-direction: column;

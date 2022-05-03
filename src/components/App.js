@@ -1,49 +1,78 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Preferences from "./Preferences";
 import ScoreBoard from "./ScoreBoard";
 import Cards from "./Cards";
 import sampleAnimals from "../sampleAnimals";
+import genRandArray from "../helpers";
 import Footer from "./Footer";
 
 function App() {
   // const [type, setTytpe] = useState('image');
   const [animals, setAnimals] = useState({});
+  const [currentAnimal, setCurrentAnimal] = useState("");
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
+  const reordered = obj => {
+    return genRandArray(6).reduce((acc, current) => {
+      const temp = `animal${current}`;
+      acc[temp] = { ...sampleAnimals[temp] };
+
+      return acc;
+    }, {});
+  }
+
   const loadSampleAnimals = () => {
+    // const reorderedAnimals = reordered(sampleAnimals);
     setAnimals(sampleAnimals);
   }
 
-  const changeSelectedStatus = (cat) => {
-    const copyAnimal = {...animals[cat], selected: true };
-    const copyAnimals = { ...animals, [cat]: copyAnimal };
-    setAnimals(copyAnimals);
+  const shuffleAnimals = () => {
+    const reorderedAnimals = reordered(animals);
+    setAnimals(reorderedAnimals);
   }
 
-  const resetSelectedStatus = () => {
-    return Object.keys(animals).reduce((acc, current) => {
-      const copyAnimal = {...animals[current], selected: false };
-      acc[current] = copyAnimal;
-      return acc;
-    }, {})
-  }
+  useEffect(() => {
+    if (score !== 0) {
+      const changeSelectedStatus = (cat) => {
+        const copyAnimal = {...animals[cat], selected: true };
+        const copyAnimals = { ...animals, [cat]: copyAnimal };
+        setAnimals(copyAnimals);
+      }
+      changeSelectedStatus(currentAnimal);
+    }
+  }, [score]);
+
+
+  useEffect(() => {
+    const resetSelectedStatus = () => {
+      return Object.keys(animals).reduce((acc, current) => {
+        const copyAnimal = {...animals[current], selected: false };
+        acc[current] = copyAnimal;
+        return acc;
+      }, {})
+    }
+    setAnimals(resetSelectedStatus());
+  }, [score]);
+
 
   const handleScore = (clickedCat) => {
-    console.log(clickedCat);
     if (animals[clickedCat].selected) {
+      console.log("i am here");
       if (score > bestScore) {
         setBestScore(score);
       }
       setScore(0);
-      const temp = resetSelectedStatus();
-      setAnimals(temp);
     } else {
       setScore(score + 1);
-      changeSelectedStatus(clickedCat);
+      setCurrentAnimal(clickedCat);
     }
   }
+
+  useEffect(() => {
+    shuffleAnimals();
+  }, [score, bestScore]);
 
   return (
     <div className="memory-game">
@@ -56,6 +85,7 @@ function App() {
         animals={animals} 
         loadSampleAnimals={loadSampleAnimals} 
         handleScore={handleScore}
+        shuffleAnimals={shuffleAnimals}
       /> 
       <Footer author="Mike" />
     </div>

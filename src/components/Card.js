@@ -5,7 +5,10 @@ function Card(props) {
   <li className="cat">
     <img 
       src={props.image} 
-      onClick={() => props.handleScore(props.animalId)} 
+      onClick={() => {
+        props.handleScore(props.animalId);
+        // props.shuffleAnimals();
+      }}
     />
   </li>
   );

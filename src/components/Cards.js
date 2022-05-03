@@ -13,6 +13,7 @@ function Cards(props) {
                 animal={props.animals[animal]}
                 animalId={animal}
                 handleScore={props.handleScore} 
+                shuffleAnimals={props.shuffleAnimals}
               />
             );
           })                                                                                                                                                                                                                                                                                                                                                                                                                       

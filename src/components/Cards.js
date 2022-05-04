@@ -6,20 +6,18 @@ function Cards(props) {
     <div>
       <ul className="cards">
         {
-          Object.keys(props.animals).map(animal => {
-            return (
-              <Card 
-                image={props.animals[animal].image} 
-                animal={props.animals[animal]}
-                animalId={animal}
-                handleScore={props.handleScore} 
-                shuffleAnimals={props.shuffleAnimals}
-              />
-            );
-          })                                                                                                                                                                                                                                                                                                                                                                                                                       
+          props.animals.map(animal => (
+            <Card 
+              key={animal.id}
+              id={animal.id}
+              selected={animal.selected}
+              name={animal.name}
+              image={animal.image}
+              handleClick={props.handleClick}
+            />
+          ))
         }
       </ul>
-      <button onClick={props.loadSampleAnimals}>Load Sample Animal</button>
     </div>
   );
 }

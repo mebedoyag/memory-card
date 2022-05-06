@@ -11,6 +11,7 @@ html {
   box-sizing: inherit;
 }
 body {
+  background: rgb(181, 181, 248);
   margin: 0;
   height: 100vh;
   font-size: 3rem;
@@ -28,6 +29,7 @@ footer {
   font-size: 2rem;
 }
 .top {
+  background: rgba(0, 0, 0, 0.181);
   padding: 30px;
   display: flex;
   justify-content: space-between;
@@ -39,13 +41,18 @@ footer {
   list-style: none;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .cat img {
-  border: 2px solid blue;
+  border: 6px solid rgb(153, 24, 246);
+  border-radius: 5px;
   width: 220px;
   height: 220px;
   object-fit: cover;
+}
+.cat img:hover {
+  cursor: pointer;
 }
 .memory-game {
   height: 100vh;

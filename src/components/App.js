@@ -8,7 +8,7 @@ import shuffleArray from "../helpers";
 import Footer from "./Footer";
 
 function App() {
-  // const [type, setTytpe] = useState('image');
+  const [type, setTytpe] = useState('image');
   const [animals, setAnimals] = useState([]);
   const [bestScore, setBestScore] = useState(0);
   const [score, setScore] = useState(0);
@@ -61,14 +61,17 @@ function App() {
     <div className="memory-game">
       <div className="top">
         <Header animal="cats"/>
-        <Preferences />
+        <Preferences 
+          loadSampleAnimals={loadSampleAnimals} 
+          type={type}
+        />
         <ScoreBoard current={score} best={bestScore}/>
       </div>
       <Cards 
         animals={animals} 
         handleClick={handleClick}
       /> 
-      <button onClick={loadSampleAnimals} className="btt-load-sample">Load Sample Animal</button>
+      {/* <button onClick={loadSampleAnimals} className="btt-load-sample">Load Sample Animal</button> */}
       <Footer author="Mike" />
     </div>
   );

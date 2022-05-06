@@ -35,6 +35,42 @@ const sampleAnimals = [
     name: "cat6",
     image: "./images/cat6.png",
   },
+  {
+    id: "animal7",
+    selected: false,
+    name: "cat7",
+    image: "./images/cat7.jpeg",
+  },
+  {
+    id: "animal8",
+    selected: false,
+    name: "cat8",
+    image: "./images/cat8.jpeg",
+  },
+  {
+    id: "animal9",
+    selected: false,
+    name: "cat9",
+    image: "./images/cat9.jpeg",
+  },
+  {
+    id: "animal10",
+    selected: false,
+    name: "cat10",
+    image: "./images/cat10.jpeg",
+  },
+  {
+    id: "animal11",
+    selected: false,
+    name: "cat11",
+    image: "./images/cat11.jpeg",
+  },
+  {
+    id: "animal12",
+    selected: false,
+    name: "cat12",
+    image: "./images/cat12.jpeg",
+  },
 ];
 
 export default sampleAnimals;

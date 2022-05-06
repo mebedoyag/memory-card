@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.4d1a11b3.css",
+    "main.js": "/react-gh-pages/static/js/main.f9cdd56c.js",
+    "static/media/Caveat-Regular.ttf": "/react-gh-pages/static/media/Caveat-Regular.ff4921b17fd01391c043.ttf",
+    "index.html": "/react-gh-pages/index.html",
+    "main.4d1a11b3.css.map": "/react-gh-pages/static/css/main.4d1a11b3.css.map",
+    "main.f9cdd56c.js.map": "/react-gh-pages/static/js/main.f9cdd56c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d1a11b3.css",
+    "static/js/main.f9cdd56c.js"
+  ]
+}
